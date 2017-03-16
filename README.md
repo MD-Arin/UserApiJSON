@@ -14,7 +14,8 @@ A quick laravel API that implements CRUD on a Users database. However API authen
     ```
     npm install
     ```
-    * NOTE: You may need to run these commands as root or administrator
+    ### NOTE: 
+    * You may need to run these commands as root or administrator
  ## Configuration
  - Install Passport
     ```
@@ -32,7 +33,7 @@ A quick laravel API that implements CRUD on a Users database. However API authen
     ```
     php artisan passport:install
     ```
- - Important
+    ### Important
     * Remember to create your own ```.env``` file
     * Generate an application key using: 
     ```
