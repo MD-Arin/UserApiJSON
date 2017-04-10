@@ -1,10 +1,10 @@
 ## Introduction
 
-A quick laravel API that implements CRUD on a Users database. However API authentication is not implemented but is added.
+A quick laravel API that implements CRUD on a Users database. However OAuth authorization is not implemented but the functionality is added.
 
 ## Installation
   - Clone or download the repository and navigate to the project folder
-  - Make sure you have composer installed
+  - As this is a Laravel project, Make sure you have composer installed
   - Open a terminal or command line in the folder directory
   - Run the following commands
     ```
