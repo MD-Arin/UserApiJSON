@@ -31,7 +31,7 @@ class UserController extends Controller
         ]);
         if($validator->fails())
         {
-            return response()->json([$validator->errors()], 400);
+            return response()->json([$validator->errors()], 403);
         }else{
             $first_name = $request->first_name;
             $second_name = $request->last_name;
@@ -66,7 +66,7 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json([$validator->errors()], 400);
+            return response()->json([$validator->errors()], 403);
         }else{
 
             if(!$user->select('id')->where('email', $request->email)->value('id')){
@@ -96,7 +96,7 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->errors(), 400);
+            return response()->json($validator->errors(), 403);
         }
         if($request->password === $request->new_password){
             return response()->json(['Error' => 'New Password Cannot be the same as Old Password'], 403);
@@ -126,7 +126,7 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->errors(), 400);
+            return response()->json($validator->errors(), 403);
         }
         if(Hash::check($request->password, $user->select('password')->where('email', $request->email)->value('password'))){
             $user->where('email', $request->email)->update(['email' => $request->new_email]);
@@ -156,7 +156,7 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->errors(), 400);
+            return response()->json($validator->errors(), 403);
         }
         if($request->new_first_name === null && $request->new_last_name === null){
             return response()->json(['Error' => 'Either Fill In new_first_name or new_last_name or Both'], 403);
@@ -206,7 +206,7 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->errors(), 400);
+            return response()->json($validator->errors(), 403);
         }
 
         if($user->select('email')->where('email', $request->email)->value('email')){
